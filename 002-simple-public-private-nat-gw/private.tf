@@ -3,7 +3,7 @@ resource "aws_instance" "private_server_002" {
   ami                    = "${data.aws_ami.ubuntu.id}"
   instance_type          = "t2.micro"
   subnet_id              = "${aws_subnet.my_private_subnet_002.id}"
-  vpc_security_group_ids = ["${aws_security_group.db.id}"]
+  vpc_security_group_ids = ["${aws_security_group.private_server_sg_002.id}"]
   key_name               = "${aws_key_pair.my_keypair_002.key_name}"
 
   tags {
